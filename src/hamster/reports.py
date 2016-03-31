@@ -164,7 +164,7 @@ class TSVWriter(ReportWriter):
                    _("description"),
                    # column title in the TSV export format
                    _("tags")]
-        self.csv_writer.writerow([h for h in headers])
+        self.csv_writer.writerow([unicode(h).encode(self.outputEncoding) for h in headers])
 
     def _write_fact(self, fact):
         fact.delta = stuff.duration_minutes(fact.delta)
