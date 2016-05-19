@@ -27,6 +27,9 @@ from hamster.client import Storage
 from xdg.BaseDirectory import xdg_data_home
 import logging
 import datetime as dt
+import gi
+
+gi.require_version('GConf', '2.0')
 
 from gi.repository import GObject as gobject
 from gi.repository import Gtk as gtk
